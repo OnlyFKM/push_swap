@@ -36,6 +36,8 @@ Para ejecutar el programa **push_swap**, sigue los siguientes pasos:
 
 Compila el programa.
 
+	make
+
 Ejecuta el programa con la lista de números enteros que deseas ordenar. Ejemplo:
 
 	./push_swap 5 2 8 4 1
