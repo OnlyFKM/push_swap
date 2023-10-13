@@ -6,11 +6,11 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 12:07:45 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/11 16:57:37 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/13 12:31:47 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 void	ft_init_program(t_stack ***stack_a, t_stack ***stack_b)
 {
@@ -34,11 +34,7 @@ void	ft_init_program(t_stack ***stack_a, t_stack ***stack_b)
 char	**ft_check_args(int argc, char *argv[])
 {
 	char	**str;
-	int		new_argc;
-	int		a;
 
-	a = 0;
-	new_argc = 0;
 	if (argc < 2)
 	{
 		ft_printf("Error\nThere is not a valid argue\n");
@@ -47,26 +43,18 @@ char	**ft_check_args(int argc, char *argv[])
 	else if (argc == 2)
 	{
 		str = ft_split(argv[1], ' ');
-		while (str[new_argc])
-		{
-			ft_printf("%s\n", str[new_argc]);
-			new_argc++;
-		}
-		ft_printf("%d\n", new_argc);
 		if (str == NULL)
 		{
 			ft_printf("Error\nFailed to split arguments\n");
 			exit(EXIT_FAILURE);
 		}
-		ft_check_conditions_2(str);
+		ft_check_conditions(str);
 		return (str);
 	}
 	else
 	{
-		while (a++ < argc - 1)
-			ft_printf("%s\n", argv[a]);
-		ft_check_conditions(argv);
-		return (argv);
+		ft_check_conditions(argv + 1);
+		return (argv + 1);
 	}
 }
 
@@ -79,7 +67,7 @@ int	main(int argc, char *argv[])
 
 	ft_init_program(&stack_a, &stack_b);
 	str = ft_check_args(argc, argv);
-	i = 1;
+	i = 0;
 	while (str[i] != NULL)
 	{
 		if (!ft_transfer_stack(str[i], stack_a))
@@ -89,7 +77,10 @@ int	main(int argc, char *argv[])
 		}
 		i++;
 	}
-	ft_sorted_list(stack_a);
-	/* 	ft_free_str(str); */
+	ft_printf("value i: %d\nvalue argc: %d\n", i, argc);
+	if (!ft_sorted_list(stack_a))
+	{
+		ft_best_algorithm(i, stack_a);
+	}
 	return (0);
 }

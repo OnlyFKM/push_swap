@@ -6,18 +6,18 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:37:37 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/11 15:53:15 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/13 13:02:42 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 void	ft_reverse_rotate(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*last;
 
-	if (ft_stacksize(*stack) > 1)
+	if (*stack && (*stack)->next)
 	{
 		last = *stack;
 		while (last->next)

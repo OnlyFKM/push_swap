@@ -6,11 +6,11 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:27:58 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/11 15:53:26 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/11 17:47:45 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 void	ft_swap(t_stack **stack)
 {
