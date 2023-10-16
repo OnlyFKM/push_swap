@@ -6,7 +6,7 @@
 #    By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 11:56:26 by frcastil          #+#    #+#              #
-#    Updated: 2023/10/12 12:58:40 by frcastil         ###   ########.fr        #
+#    Updated: 2023/10/16 12:34:37 by frcastil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ LIBFT = ./libft
 SRCS = src/main.c\
 	src/checkers.c\
 	src/utils.c\
-	src/utils_2.c\
 	src/stack.c\
 	src/push.c\
 	src/swap.c\

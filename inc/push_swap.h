@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:06:12 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/13 14:04:16 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:34:16 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,12 @@ int				ft_stacksize(t_stack *stack);
 void			ft_free_str(char **str);
 int				ft_sorted_list(t_stack **stack);
 void			ft_stackadd_back(t_stack **stack, t_stack *new);
-t_stack			*ft_stacklast(t_stack *stack);
-int				ft_sorted(char **str);
-
-// utils_2.c
-void			ft_order_3(t_stack **stack_a);
+void			*ft_stacklast(t_stack *stack);
 
 // push.c
-void			ft_push(t_stack **stack);
-void			ft_push_a(t_stack **stack_a);
-void			ft_push_b(t_stack **stack_b);
+void			ft_push(t_stack **stack_one, t_stack **stack_two);
+void			ft_push_a(t_stack **stack_a, t_stack **stack_b);
+void			ft_push_b(t_stack **stack_b, t_stack **stack_a);
 
 // swap.c
 void			ft_swap(t_stack **stack);
@@ -81,6 +77,7 @@ void			ft_reverse_rotate_b(t_stack **stack_b);
 void			ft_reverse_rotate_ss(t_stack **stack_a, t_stack **stack_b);
 
 // algorithm.c
-void			ft_best_algorithm(int i, t_stack **stack_a);
+void			ft_order_3(t_stack **stack_a);
+void			ft_best_algorithm(t_stack **stack_a, t_stack **stack_b, int i);
 
 #endif

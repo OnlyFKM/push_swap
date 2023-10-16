@@ -6,13 +6,13 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 11:58:50 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/12 15:32:26 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:34:24 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-t_stack	*ft_stacklast(t_stack *stack)
+void	*ft_stacklast(t_stack *stack)
 {
 	t_stack	*current;
 
@@ -85,23 +85,5 @@ int	ft_sorted_list(t_stack **stack)
 		tmp = tmp->next;
 	}
 	ft_printf("ordenada\n");
-	return (TRUE);
-}
-
-int	ft_sorted(char **str)
-{
-	int	i;
-	int	num1;
-	int	num2;
-
-	i = 0;
-	while (str[i] && str[i + 1])
-	{
-		num1 = ft_atoi(str[i]);
-		num2 = ft_atoi(str[i + 1]);
-		if (num1 > num2)
-			return (FALSE);
-		i++;
-	}
 	return (TRUE);
 }
