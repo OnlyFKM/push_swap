@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 12:07:45 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/20 15:05:00 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/23 12:54:23 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	main(int argc, char *argv[])
 	t_stack	**stack_b;
 	char	**str;
 	int		i;
-	t_stack	*current;
+	//t_stack	*current;
 
 	ft_init_program(&stack_a, &stack_b);
 	str = ft_check_args(argc, argv);
@@ -83,11 +83,11 @@ int	main(int argc, char *argv[])
 		ft_best_algorithm(stack_a, stack_b, i);
 	}
 	// IMPRIMIR
-	current = *stack_a;
+	/* current = *stack_a;
 	while (current)
 	{
 		ft_printf("%i\n", current->values);
 		current = current->next;
-	}
+	} */
 	return (0);
 }

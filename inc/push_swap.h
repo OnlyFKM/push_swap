@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:06:12 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/20 16:53:23 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:54:31 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ void		ft_reverse_rotate_ss(t_stack **stack_a, t_stack **stack_b);
 
 // algorithm.c
 void		ft_best_algorithm(t_stack **stack_a, t_stack **stack_b, int i);
+void		ft_rotate_a_if(t_stack **stack_a, int *cost_a);
+void		ft_rotate_b_if(t_stack **stack_b, int *cost_b);
 
 // steps.c
 void		ft_first_step(t_stack **stack_a, t_stack **stack_b);

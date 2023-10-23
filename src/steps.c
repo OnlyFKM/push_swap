@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:58:42 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/23 11:36:54 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:55:57 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,38 +49,8 @@ void	ft_fourth_step(t_stack **stack_a, t_stack **stack_b)
 		cheapest->cost_a--;
 		cheapest->cost_b--;
 	}
-	if (cheapest->cost_a > 0)
-	{
-		while (cheapest->cost_a > 0)
-		{
-			ft_rotate_a(stack_a);
-			cheapest->cost_a--;
-		}
-	}
-	if (cheapest->cost_a < 0)
-	{
-		while (cheapest->cost_a < 0)
-		{
-			ft_reverse_rotate_a(stack_b);
-			cheapest->cost_a++;
-		}		
-	}
-	if (cheapest->cost_b > 0)
-	{
-		while (cheapest->cost_b > 0)
-		{
-			ft_rotate_b(stack_b);
-			cheapest->cost_b--;
-		}
-	}
-	if (cheapest->cost_b < 0)
-	{
-		while (cheapest->cost_b < 0)
-		{
-			ft_reverse_rotate_b(stack_b);
-			cheapest->cost_b++;
-		}
-	}
+	ft_rotate_a_if(stack_a, &(cheapest->cost_a));
+	ft_rotate_b_if(stack_b, &(cheapest->cost_b));
 	ft_push_a(stack_a, stack_b);
 }
 

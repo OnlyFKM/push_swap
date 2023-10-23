@@ -6,7 +6,7 @@
 #    By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 11:56:26 by frcastil          #+#    #+#              #
-#    Updated: 2023/10/20 12:02:21 by frcastil         ###   ########.fr        #
+#    Updated: 2023/10/23 13:04:01 by frcastil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ CC = gcc
 OBJS = ${SRCS:.c=.o}
 
 all: $(LIBFT)/libft.a $(NAME)
-
 	
 $(NAME): $(OBJS)
 	@$(CC) -g $(CFLAGS) $(LIBFT)/libft.a $(OBJS) -o $(NAME)
@@ -43,6 +42,30 @@ $(NAME): $(OBJS)
 
 $(LIBFT)/libft.a:
 	@make -C $(LIBFT)
+
+test3: $(NAME)
+    $(eval ARG = $(shell jot -r 3 $(shell echo "-(2^31)" | bc) $(shell echo "(2^31)-1" | bc) | tr ' ' '\n' | sort -n | tr '\n' ' '))
+    ./push_swap $(ARG) | ./checker_macos $(ARG)
+    @echo -n "Instructions: "
+    @./push_swap $(ARG) | wc -l
+
+test5: $(NAME)
+    $(eval ARG = $(shell jot -r 5 $(shell echo "-(2^31)" | bc) $(shell echo "(2^31)-1" | bc) | tr ' ' '\n' | sort -n | tr '\n' ' '))
+    ./push_swap $(ARG) | ./checker_macos $(ARG)
+    @echo -n "Instructions: "
+    @./push_swap $(ARG) | wc -l
+
+test100: $(NAME)
+    $(eval ARG = $(shell jot -r 100 $(shell echo "-(2^31)" | bc) $(shell echo "(2^31)-1" | bc) | tr ' ' '\n' | sort -n | tr '\n' ' '))
+    ./push_swap $(ARG) | ./checker_macos $(ARG)
+    @echo -n "Instructions: "
+    @./push_swap $(ARG) | wc -l
+
+test500: $(NAME)
+    $(eval ARG = $(shell jot -r 500 $(shell echo "-(2^31)" | bc) $(shell echo "(2^31)-1" | bc) | tr ' ' '\n' | sort -n | tr '\n' ' '))
+    ./push_swap $(ARG) | ./checker_macos $(ARG)
+    @echo -n "Instructions: "
+    @./push_swap $(ARG) | wc -l
 
 clean:
 	@rm -rf $(OBJS)
