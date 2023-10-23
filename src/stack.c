@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:00:36 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/11 17:47:43 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/19 15:58:39 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	ft_transfer_stack(char *value_str, t_stack **stack)
 		return (0);
 	}
 	new_node->values = value;
-	new_node->size = 0;
 	new_node->pos = 0;
+	new_node->target = 0;
 	new_node->index = 0;
 	new_node->cost_a = 0;
 	new_node->cost_b = 0;
