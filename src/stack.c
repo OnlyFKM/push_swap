@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 12:00:36 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/19 15:58:39 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:13:51 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ int	ft_transfer_stack(char *value_str, t_stack **stack)
 	t_stack	*new_node;
 
 	value = ft_atoi(value_str);
+	//free(value_str);
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (new_node == NULL)
 	{
-		ft_printf("Error\nFailed to allocate memory\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	new_node->values = value;

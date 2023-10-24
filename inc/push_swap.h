@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:06:12 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/23 11:54:31 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:46:26 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_stack
 int			main(int argc, char *argv[]);
 char		**ft_check_args(int argc, char *argv[]);
 void		ft_init_program(t_stack ***stack_a, t_stack ***stack_b);
+void		ft_free_stack(t_stack **stack);
 
 // checkers.c
 void		ft_check_conditions(char *argv[]);
@@ -81,13 +82,13 @@ void		ft_swap_s(t_stack **stack_a, t_stack **stack_b);
 void		ft_rotate(t_stack **stack);
 void		ft_rotate_a(t_stack **stack_a);
 void		ft_rotate_b(t_stack **stack_b);
-void		ft_rotate_ss(t_stack **stack_a, t_stack **stack_b);
+void		ft_rotate_r(t_stack **stack_a, t_stack **stack_b);
 
 // reverse_rotate.c
 void		ft_reverse_rotate(t_stack **stack);
 void		ft_reverse_rotate_a(t_stack **stack_a);
 void		ft_reverse_rotate_b(t_stack **stack_b);
-void		ft_reverse_rotate_ss(t_stack **stack_a, t_stack **stack_b);
+void		ft_reverse_rotate_r(t_stack **stack_a, t_stack **stack_b);
 
 // algorithm.c
 void		ft_best_algorithm(t_stack **stack_a, t_stack **stack_b, int i);
@@ -100,5 +101,11 @@ void		ft_second_step(t_stack **stack_a);
 void		ft_third_step(t_stack **stack_a, t_stack **stack_b);
 void		ft_fourth_step(t_stack **stack_a, t_stack **stack_b);
 void		ft_last_step(t_stack **stack_a);
+
+// checker_bonus.c
+int			main2(int argc, char *argv[]);
+void		ft_final_check(t_stack **stack_a, t_stack **stack_b);
+void		ft_messages(t_stack **stack_a, t_stack **stack_b, char *order);
+void		ft_checker(t_stack **stack_a, t_stack **stack_b);
 
 #endif

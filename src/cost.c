@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:58:15 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/23 11:32:51 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:51:48 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,6 @@ t_stack	*ft_calculate_cheapest(t_stack **stack_b)
 	cheapest = copy;
 	while (copy)
 	{
-		/* copy->cost_a = ft_absolute_value(copy->cost_a);
-		copy->cost_b = ft_absolute_value(copy->cost_b);
-		cheapest->cost_a = ft_absolute_value(cheapest->cost_a);
-		cheapest->cost_b = ft_absolute_value(cheapest->cost_b); */
 		if (ft_abs_value(copy->cost_a) + ft_abs_value(copy->cost_b)
 			< ft_abs_value(cheapest->cost_a) + ft_abs_value(cheapest->cost_b))
 			cheapest = copy;

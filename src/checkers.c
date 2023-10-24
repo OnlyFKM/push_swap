@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 15:13:34 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/13 12:14:01 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 17:33:32 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,26 +69,12 @@ void	ft_check_conditions(char *argv[])
 {
 	if (ft_check_duplicates(argv) == FALSE)
 	{
-		ft_printf("Error\nThere are duplicate argues\n");
+		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
 	if (ft_check_correct_digits((argv)) == FALSE)
 	{
-		ft_printf("Error\nThere are not correct digits\n");
+		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
 	}
 }
-
-/* void	ft_check_conditions_2(char **str)
-{
-	if (ft_check_duplicates(str) == FALSE)
-	{
-		ft_printf("Error\nThere are duplicate argues\n");
-		exit(EXIT_FAILURE);
-	}
-	if (ft_check_correct_digits(str) == FALSE)
-	{
-		ft_printf("Error\nThere are not correct digits\n");
-		exit(EXIT_FAILURE);
-	}
-} */

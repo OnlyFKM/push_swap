@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:58:42 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/23 11:55:57 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:07:34 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,16 @@ void	ft_fourth_step(t_stack **stack_a, t_stack **stack_b)
 {
 	t_stack	*cheapest;
 
-	//ft_calculate_cost(stack_a, stack_b);
 	cheapest = ft_calculate_cheapest(stack_b);
 	while (cheapest->cost_a < 0 && cheapest->cost_b < 0)
 	{
-		ft_reverse_rotate_ss(stack_a, stack_b);
+		ft_reverse_rotate_r(stack_a, stack_b);
 		cheapest->cost_a++;
 		cheapest->cost_b++;
 	}
 	while (cheapest->cost_a > 0 && cheapest->cost_b > 0)
 	{
-		ft_rotate_ss(stack_a, stack_b);
+		ft_rotate_r(stack_a, stack_b);
 		cheapest->cost_a--;
 		cheapest->cost_b--;
 	}
@@ -84,8 +83,6 @@ void	ft_second_step(t_stack **stack_a)
 	first = *stack_a;
 	middle = first->next;
 	last = middle->next;
-	/* ft_printf("first: %d, middle: %d, last: %d\n", first->values,
-		middle->values, last->values); */
 	if (first->values > middle->values && first->values > last->values)
 	{
 		ft_rotate_a(stack_a);
