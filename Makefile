@@ -6,7 +6,7 @@
 #    By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 11:56:26 by frcastil          #+#    #+#              #
-#    Updated: 2023/10/24 16:44:46 by frcastil         ###   ########.fr        #
+#    Updated: 2023/10/24 18:05:27 by frcastil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,7 @@ SRCS = src/main.c\
 	src/steps.c\
 	src/cost.c\
 
-SRCS_BONUS = src/main.c\
-	src/checkers.c\
+SRCS_BONUS = src/checkers.c\
 	src/utils.c\
 	src/position.c\
 	src/stack.c\
@@ -42,6 +41,7 @@ SRCS_BONUS = src/main.c\
 	src/steps.c\
 	src/cost.c\
 	src_bonus/checker.c\
+	src_bonus/utils_bonus.c\
 
 CC = gcc
 

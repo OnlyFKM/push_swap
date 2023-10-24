@@ -6,63 +6,100 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:41:50 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/24 16:46:22 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:05:02 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void	ft_checker(t_stack **stack_a, t_stack **stack_b)
+void	ft_init_program(t_stack ***stack_a, t_stack ***stack_b)
 {
-	char	*line;
-	int		fd;
-
-	fd = 0;
-	line = get_next_line(fd);
-	while (get_next_line(fd) > 0)
+	*stack_a = (t_stack **)malloc(sizeof(t_stack *));
+	if (*stack_a == NULL)
 	{
-		ft_messages(stack_a, stack_b, line);
-		free(line);
+		ft_printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	**stack_a = NULL;
+	*stack_b = (t_stack **)malloc(sizeof(t_stack *));
+	if (*stack_b == NULL)
+	{
+		free(*stack_a);
+		ft_printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	**stack_b = NULL;
+}
+
+char	**ft_check_args(int argc, char *argv[])
+{
+	char	**str;
+
+	if (argc < 2)
+	{
+		ft_printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	else if (argc == 2)
+	{
+		str = ft_split(argv[1], ' ');
+		if (str == NULL)
+		{
+			ft_printf("Error\n");
+			exit(EXIT_FAILURE);
+		}
+		ft_check_conditions(str);
+		return (str);
+	}
+	else
+	{
+		ft_check_conditions(argv + 1);
+		return (argv + 1);
 	}
 }
 
-void	ft_final_check(t_stack **stack_a, t_stack **stack_b)
+void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_sorted_list(stack_a) && stack_b == NULL)
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
+	char	*line;
+
+	line = get_next_line(0);
+	while (line)
+	{
+		if (ft_messages(stack_a, stack_b, line) == EXIT_FAILURE)
+			break ;
+		free(line);
+		line = get_next_line(0);
+	}
 }
 
-void	ft_messages(t_stack **stack_a, t_stack **stack_b, char *order)
+int	ft_messages(t_stack **stack_a, t_stack **stack_b, char *order)
 {
 	if (ft_strncmp(order, "sa", 2) == 0)
-		ft_swap_a(stack_a);
+		return (ft_swap_a(stack_a), EXIT_SUCCESS);
 	if (ft_strncmp(order, "sb", 2) == 0)
-		ft_swap_b(stack_b);
+		return (ft_swap_b(stack_b), EXIT_SUCCESS);
 	if (ft_strncmp(order, "ss", 2) == 0)
-		ft_swap_s(stack_a, stack_b);
+		return (ft_swap_s(stack_a, stack_b), EXIT_SUCCESS);
 	if (ft_strncmp(order, "pa", 2) == 0)
-		ft_push_a(stack_a, stack_b);
+		return (ft_push_a(stack_a, stack_b), EXIT_SUCCESS);
 	if (ft_strncmp(order, "pb", 2) == 0)
-		ft_push_b(stack_a, stack_b);
+		return (ft_push_b(stack_a, stack_b), EXIT_SUCCESS);
 	if (ft_strncmp(order, "ra", 2) == 0)
-		ft_rotate(stack_a);
+		return (ft_rotate_a(stack_a), EXIT_SUCCESS);
 	if (ft_strncmp(order, "rb", 2) == 0)
-		ft_rotate_b(stack_b);
+		return (ft_rotate_b(stack_a), EXIT_SUCCESS);
 	if (ft_strncmp(order, "rr", 2) == 0)
-		ft_rotate_r(stack_a, stack_b);
+		return (ft_rotate_r(stack_a, stack_b), EXIT_SUCCESS);
 	if (ft_strncmp(order, "rra", 3) == 0)
-		ft_reverse_rotate_a(stack_a);
+		return (ft_reverse_rotate_a(stack_a), EXIT_SUCCESS);
 	if (ft_strncmp(order, "rrb", 3) == 0)
-		ft_reverse_rotate_b(stack_b);
+		return (ft_reverse_rotate_b(stack_a), EXIT_SUCCESS);
 	if (ft_strncmp(order, "rrb", 3) == 0)
-		ft_reverse_rotate_r(stack_a, stack_b);
-	else
-		ft_printf("Error\n");
+		return (ft_reverse_rotate_r(stack_a, stack_b), EXIT_SUCCESS);
+	return (ft_printf("Error\n"), EXIT_FAILURE);
 }
 
-int	main2(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_stack	**stack_a;
 	t_stack	**stack_b;

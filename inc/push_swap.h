@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:06:12 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/24 16:46:26 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:06:35 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,9 +103,13 @@ void		ft_fourth_step(t_stack **stack_a, t_stack **stack_b);
 void		ft_last_step(t_stack **stack_a);
 
 // checker_bonus.c
-int			main2(int argc, char *argv[]);
-void		ft_final_check(t_stack **stack_a, t_stack **stack_b);
-void		ft_messages(t_stack **stack_a, t_stack **stack_b, char *order);
+int			main(int argc, char *argv[]);
+void		ft_init_program(t_stack ***stack_a, t_stack ***stack_b);
+int			ft_messages(t_stack **stack_a, t_stack **stack_b, char *order);
 void		ft_checker(t_stack **stack_a, t_stack **stack_b);
+
+// utils_bonus.c
+void		ft_final_check(t_stack **stack_a, t_stack **stack_b);
+void		ft_free_stack(t_stack **stack);
 
 #endif
