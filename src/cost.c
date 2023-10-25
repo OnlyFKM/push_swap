@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:58:15 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/23 14:51:48 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:48:18 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	ft_calculate_cost(t_stack **stack_a, t_stack **stack_b)
 		copy_b->cost_a = copy_b->target - 1;
 		if (copy_b->target > aux_a)
 			copy_b->cost_a = (size_a - copy_b->target + 1) * -1;
- 		/* ft_printf("value: %i,  tp: %i, cost_a: %i, cost_b: %i \n", copy_b->values, copy_b->target, copy_b->cost_a, copy_b->cost_b); */
 		copy_b = copy_b->next;
 	}
 }

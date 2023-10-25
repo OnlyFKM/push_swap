@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 12:07:45 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/24 17:31:39 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:15:17 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ int	main(int argc, char *argv[])
 	char	**str;
 	int		i;
 
-	//atexit(ft_leaks);
 	ft_init_program(&stack_a, &stack_b);
 	str = ft_check_args(argc, argv);
 	i = 0;

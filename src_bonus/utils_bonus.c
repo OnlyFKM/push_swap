@@ -6,11 +6,16 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:04:07 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/25 11:01:15 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:03:05 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
+
+/* void	ft_leaks(void)
+{
+	system("leaks -q checker");
+} */
 
 void	ft_free_stack(t_stack **stack)
 {

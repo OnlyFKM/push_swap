@@ -6,7 +6,7 @@
 #    By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/02 11:56:26 by frcastil          #+#    #+#              #
-#    Updated: 2023/10/24 18:05:27 by frcastil         ###   ########.fr        #
+#    Updated: 2023/10/25 12:03:41 by frcastil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
 all: $(LIBFT)/libft.a $(NAME)
 
-bonus: all $(NAME_BONUS)
+bonus: $(LIBFT)/libft.a $(NAME_BONUS)
 	
 $(NAME): $(OBJS)
 	@$(CC) -g $(CFLAGS) $(LIBFT)/libft.a $(OBJS) -o $(NAME)

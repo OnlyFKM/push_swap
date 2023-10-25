@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:41:50 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/25 10:54:39 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/25 12:12:25 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ int	main(int argc, char *argv[])
 		}
 		i++;
 	}
+	ft_free_str(str);
 	ft_checker(stack_a, stack_b);
 	ft_final_check(stack_a, stack_b);
 	ft_free_stack(stack_a);
