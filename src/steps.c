@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 10:58:42 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/23 15:07:34 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:27:34 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ void	ft_last_step(t_stack **stack_a)
 	if (first > size / 2)
 	{
 		while ((*stack_a)->index < size)
-			ft_reverse_rotate_a(stack_a);
+			ft_reverse_rotate_a(stack_a, 1);
 	}
 	else
 	{
 		while ((*stack_a)->index != 1)
-			ft_reverse_rotate_a(stack_a);
+			ft_reverse_rotate_a(stack_a, 1);
 	}
 }
 
@@ -38,19 +38,19 @@ void	ft_fourth_step(t_stack **stack_a, t_stack **stack_b)
 	cheapest = ft_calculate_cheapest(stack_b);
 	while (cheapest->cost_a < 0 && cheapest->cost_b < 0)
 	{
-		ft_reverse_rotate_r(stack_a, stack_b);
+		ft_reverse_rotate_r(stack_a, stack_b, 1);
 		cheapest->cost_a++;
 		cheapest->cost_b++;
 	}
 	while (cheapest->cost_a > 0 && cheapest->cost_b > 0)
 	{
-		ft_rotate_r(stack_a, stack_b);
+		ft_rotate_r(stack_a, stack_b, 1);
 		cheapest->cost_a--;
 		cheapest->cost_b--;
 	}
 	ft_rotate_a_if(stack_a, &(cheapest->cost_a));
 	ft_rotate_b_if(stack_b, &(cheapest->cost_b));
-	ft_push_a(stack_a, stack_b);
+	ft_push_a(stack_a, stack_b, 1);
 }
 
 void	ft_third_step(t_stack **stack_a, t_stack **stack_b)
@@ -85,16 +85,16 @@ void	ft_second_step(t_stack **stack_a)
 	last = middle->next;
 	if (first->values > middle->values && first->values > last->values)
 	{
-		ft_rotate_a(stack_a);
+		ft_rotate_a(stack_a, 1);
 		ft_second_step(stack_a);
 	}
 	if (first->values < middle->values && middle->values > last->values)
 	{
-		ft_reverse_rotate_a(stack_a);
+		ft_reverse_rotate_a(stack_a, 1);
 		ft_second_step(stack_a);
 	}
 	if (first->values > middle->values && first->values < last->values)
-		ft_swap_a(stack_a);
+		ft_swap_a(stack_a, 1);
 }
 
 void	ft_first_step(t_stack **stack_a, t_stack **stack_b)
@@ -110,16 +110,16 @@ void	ft_first_step(t_stack **stack_a, t_stack **stack_b)
 	{
 		if ((*stack_a)->index < size / 2)
 		{
-			ft_push_b(stack_a, stack_b);
+			ft_push_b(stack_a, stack_b, 1);
 			push++;
 		}
 		else
-			ft_rotate_a(stack_a);
+			ft_rotate_a(stack_a, 1);
 		i++;
 	}
 	while (size - push > 3)
 	{
-		ft_push_b(stack_a, stack_b);
+		ft_push_b(stack_a, stack_b, 1);
 		push++;
 	}
 }

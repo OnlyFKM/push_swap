@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:27:58 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/11 17:47:45 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:21:54 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ void	ft_swap(t_stack **stack)
 	}
 }
 
-void	ft_swap_a(t_stack **stack_a)
+void	ft_swap_a(t_stack **stack_a, int flag)
 {
 	ft_swap(stack_a);
-	ft_printf("sa\n");
+	if (flag == 1)
+		ft_printf("sa\n");
 }
 
-void	ft_swap_b(t_stack **stack_b)
+void	ft_swap_b(t_stack **stack_b, int flag)
 {
 	ft_swap(stack_b);
-	ft_printf("sb\n");
+	if (flag == 1)
+		ft_printf("sb\n");
 }
 
-void	ft_swap_s(t_stack **stack_a, t_stack **stack_b)
+void	ft_swap_s(t_stack **stack_a, t_stack **stack_b, int flag)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	ft_printf("ss\n");
+	if (flag == 1)
+		ft_printf("ss\n");
 }

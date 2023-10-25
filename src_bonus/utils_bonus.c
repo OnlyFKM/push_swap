@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:04:07 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/24 18:04:52 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:01:15 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_free_stack(t_stack **stack)
 
 void	ft_final_check(t_stack **stack_a, t_stack **stack_b)
 {
-	if (ft_sorted_list(stack_a) && stack_b == NULL)
+	if (ft_sorted_list(stack_a) && *stack_b == NULL)
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");

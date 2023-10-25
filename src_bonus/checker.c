@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:41:50 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/24 18:05:02 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:54:39 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 	while (line)
 	{
 		if (ft_messages(stack_a, stack_b, line) == EXIT_FAILURE)
-			break ;
+			exit(EXIT_FAILURE);
 		free(line);
 		line = get_next_line(0);
 	}
@@ -74,28 +74,28 @@ void	ft_checker(t_stack **stack_a, t_stack **stack_b)
 
 int	ft_messages(t_stack **stack_a, t_stack **stack_b, char *order)
 {
-	if (ft_strncmp(order, "sa", 2) == 0)
-		return (ft_swap_a(stack_a), EXIT_SUCCESS);
-	if (ft_strncmp(order, "sb", 2) == 0)
-		return (ft_swap_b(stack_b), EXIT_SUCCESS);
-	if (ft_strncmp(order, "ss", 2) == 0)
-		return (ft_swap_s(stack_a, stack_b), EXIT_SUCCESS);
-	if (ft_strncmp(order, "pa", 2) == 0)
-		return (ft_push_a(stack_a, stack_b), EXIT_SUCCESS);
-	if (ft_strncmp(order, "pb", 2) == 0)
-		return (ft_push_b(stack_a, stack_b), EXIT_SUCCESS);
-	if (ft_strncmp(order, "ra", 2) == 0)
-		return (ft_rotate_a(stack_a), EXIT_SUCCESS);
-	if (ft_strncmp(order, "rb", 2) == 0)
-		return (ft_rotate_b(stack_a), EXIT_SUCCESS);
-	if (ft_strncmp(order, "rr", 2) == 0)
-		return (ft_rotate_r(stack_a, stack_b), EXIT_SUCCESS);
-	if (ft_strncmp(order, "rra", 3) == 0)
-		return (ft_reverse_rotate_a(stack_a), EXIT_SUCCESS);
-	if (ft_strncmp(order, "rrb", 3) == 0)
-		return (ft_reverse_rotate_b(stack_a), EXIT_SUCCESS);
-	if (ft_strncmp(order, "rrb", 3) == 0)
-		return (ft_reverse_rotate_r(stack_a, stack_b), EXIT_SUCCESS);
+	if (ft_strncmp(order, "sa\n", 3) == 0)
+		return (ft_swap_a(stack_a, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "sb\n", 3) == 0)
+		return (ft_swap_b(stack_b, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "ss\n", 3) == 0)
+		return (ft_swap_s(stack_a, stack_b, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "pa\n", 3) == 0)
+		return (ft_push_a(stack_a, stack_b, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "pb\n", 3) == 0)
+		return (ft_push_b(stack_a, stack_b, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "ra\n", 3) == 0)
+		return (ft_rotate_a(stack_a, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "rb\n", 3) == 0)
+		return (ft_rotate_b(stack_a, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "rr\n", 3) == 0)
+		return (ft_rotate_r(stack_a, stack_b, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "rra\n", 4) == 0)
+		return (ft_reverse_rotate_a(stack_a, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "rrb\n", 4) == 0)
+		return (ft_reverse_rotate_b(stack_b, 0), EXIT_SUCCESS);
+	if (ft_strncmp(order, "rrr\n", 4) == 0)
+		return (ft_reverse_rotate_r(stack_a, stack_b, 0), EXIT_SUCCESS);
 	return (ft_printf("Error\n"), EXIT_FAILURE);
 }
 

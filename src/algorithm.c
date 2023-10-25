@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:26:23 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/23 11:57:13 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:25:23 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_rotate_a_if(t_stack **stack_a, int *cost_a)
 	{
 		while (*cost_a > 0)
 		{
-			ft_rotate_a(stack_a);
+			ft_rotate_a(stack_a, 1);
 			(*cost_a)--;
 		}
 	}
@@ -26,7 +26,7 @@ void	ft_rotate_a_if(t_stack **stack_a, int *cost_a)
 	{
 		while (*cost_a < 0)
 		{
-			ft_reverse_rotate_a(stack_a);
+			ft_reverse_rotate_a(stack_a, 1);
 			(*cost_a)++;
 		}		
 	}
@@ -38,7 +38,7 @@ void	ft_rotate_b_if(t_stack **stack_b, int *cost_b)
 	{
 		while (*cost_b > 0)
 		{
-			ft_rotate_b(stack_b);
+			ft_rotate_b(stack_b, 1);
 			(*cost_b)--;
 		}
 	}
@@ -46,7 +46,7 @@ void	ft_rotate_b_if(t_stack **stack_b, int *cost_b)
 	{
 		while (*cost_b < 0)
 		{
-			ft_reverse_rotate_b(stack_b);
+			ft_reverse_rotate_b(stack_b, 1);
 			(*cost_b)++;
 		}
 	}
@@ -55,7 +55,7 @@ void	ft_rotate_b_if(t_stack **stack_b, int *cost_b)
 void	ft_best_algorithm(t_stack **stack_a, t_stack **stack_b, int i)
 {
 	if (i == 2)
-		ft_swap_a(stack_a);
+		ft_swap_a(stack_a, 1);
 	if (i == 3)
 		ft_second_step(stack_a);
 	if (i > 3)
@@ -70,7 +70,6 @@ void	ft_best_algorithm(t_stack **stack_a, t_stack **stack_b, int i)
 			ft_third_step(stack_a, stack_b);
 			ft_calculate_cost(stack_a, stack_b);
 			ft_fourth_step(stack_a, stack_b);
-/* 			ft_last_step(stack_a); */
 		}
 		if (!ft_sorted_list(stack_a))
 			ft_last_step(stack_a);

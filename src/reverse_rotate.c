@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:37:37 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/23 15:05:33 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/24 18:20:37 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,24 @@ void	ft_reverse_rotate(t_stack **stack)
 	}
 }
 
-void	ft_reverse_rotate_a(t_stack **stack_a)
+void	ft_reverse_rotate_a(t_stack **stack_a, int flag)
 {
 	ft_reverse_rotate(stack_a);
-	ft_printf("rra\n");
+	if (flag == 1)
+		ft_printf("rra\n");
 }
 
-void	ft_reverse_rotate_b(t_stack **stack_b)
+void	ft_reverse_rotate_b(t_stack **stack_b, int flag)
 {
 	ft_reverse_rotate(stack_b);
-	ft_printf("rrb\n");
+	if (flag == 1)
+		ft_printf("rrb\n");
 }
 
-void	ft_reverse_rotate_r(t_stack **stack_a, t_stack **stack_b)
+void	ft_reverse_rotate_r(t_stack **stack_a, t_stack **stack_b, int flag)
 {
 	ft_reverse_rotate(stack_a);
 	ft_reverse_rotate(stack_b);
-	ft_printf("rrr\n");
+	if (flag == 1)
+		ft_printf("rrr\n");
 }

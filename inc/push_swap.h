@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:06:12 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/24 18:06:35 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:44:41 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,26 +69,26 @@ int			ft_check_par(int size);
 
 // push.c
 void		ft_push(t_stack **stack_one, t_stack **stack_two);
-void		ft_push_a(t_stack **stack_a, t_stack **stack_b);
-void		ft_push_b(t_stack **stack_b, t_stack **stack_a);
+void		ft_push_a(t_stack **stack_a, t_stack **stack_b, int flag);
+void		ft_push_b(t_stack **stack_b, t_stack **stack_a, int flag);
 
 // swap.c
 void		ft_swap(t_stack **stack);
-void		ft_swap_a(t_stack **stack_a);
-void		ft_swap_b(t_stack **stack_b);
-void		ft_swap_s(t_stack **stack_a, t_stack **stack_b);
+void		ft_swap_a(t_stack **stack_a, int flag);
+void		ft_swap_b(t_stack **stack_b, int flag);
+void		ft_swap_s(t_stack **stack_a, t_stack **stack_b, int flag);
 
 // rotate.c
 void		ft_rotate(t_stack **stack);
-void		ft_rotate_a(t_stack **stack_a);
-void		ft_rotate_b(t_stack **stack_b);
-void		ft_rotate_r(t_stack **stack_a, t_stack **stack_b);
+void		ft_rotate_a(t_stack **stack_a, int flag);
+void		ft_rotate_b(t_stack **stack_b, int flag);
+void		ft_rotate_r(t_stack **stack_a, t_stack **stack_b, int flag);
 
 // reverse_rotate.c
 void		ft_reverse_rotate(t_stack **stack);
-void		ft_reverse_rotate_a(t_stack **stack_a);
-void		ft_reverse_rotate_b(t_stack **stack_b);
-void		ft_reverse_rotate_r(t_stack **stack_a, t_stack **stack_b);
+void		ft_reverse_rotate_a(t_stack **stack_a, int flag);
+void		ft_reverse_rotate_b(t_stack **stack_b, int flag);
+void		ft_reverse_rotate_r(t_stack **stack_a, t_stack **stack_b, int flag);
 
 // algorithm.c
 void		ft_best_algorithm(t_stack **stack_a, t_stack **stack_b, int i);
