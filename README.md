@@ -1,26 +1,22 @@
-# Push_swap
+# **Push_swap**
 
-Este proyecto tiene como objetivo la implementación de un programa en C llamado **push_swap** que calculará y mostrará en la salida estándar el programa más pequeño, creado con las instrucciones del lenguaje Push swap, que ordene los números enteros recibidos como argumentos. La principal dificultad de este proyecto radica en encontrar un algoritmo eficiente para ordenar los datos utilizando un conjunto limitado de instrucciones y el menor número de acciones posible.
+Este proyecto tiene como objetivo la implementación de dos programas en C: **push_swap** y **checker**.
 
-### **Descripción del Proyecto**
+## **push_swap**
 
-Push_swap es un proyecto de algoritmia simple pero efectivo, donde debes ordenar un conjunto de valores enteros utilizando dos stacks y un conjunto de instrucciones para manipularlos. El desafío es encontrar la solución más óptima para la ordenación de los datos, lo que implica probar varios algoritmos y técnicas de ordenamiento.
+**push_swap** es un programa que calcula y muestra en la salida estándar el programa más pequeño, creado con las instrucciones del lenguaje Push swap, que ordene los números enteros recibidos como argumentos. La principal dificultad de este proyecto radica en encontrar un algoritmo eficiente para ordenar los datos utilizando un conjunto limitado de instrucciones y el menor número de acciones posible.
 
-### **Objetivos**
+## **checker**
 
-Los objetivos de aprendizaje de este proyecto son los siguientes:
+**checker** es el segundo programa del bonus. Toma como argumento el stack "a" en forma de una lista de enteros. El primer argumento debe estar en la parte superior del stack (cuidado con el orden). Cuando se ejecuta **checker**, esperará y leerá una lista de instrucciones separadas por saltos de línea. Una vez que se hayan leído todas las instrucciones, **checker** las ejecutará en el stack "a".
 
-**Comprender los algoritmos de ordenamiento:** Aprenderás a implementar algoritmos de ordenamiento y comprenderás su complejidad. Este conocimiento es fundamental en la programación y es comúnmente evaluado en entrevistas laborales.
+- Si, después de ejecutar todas las instrucciones, el stack "a" está ordenado y el stack "b" está vacío, entonces el programa **checker** mostrará "OK" seguido de un salto de línea en la salida estándar.
 
-**Uso de C:** Practicarás la programación en C, un lenguaje de programación ampliamente utilizado en la industria y valorado por su eficiencia y control sobre los recursos del sistema.
+- En cualquier otro caso, mostrará "KO" seguido de un salto de línea en la salida estándar.
 
-**Énfasis en la complejidad:** Entenderás la importancia de la complejidad de los algoritmos y cómo puede variar según la configuración de los datos a ordenar. Aprenderás a elegir la solución más eficiente para cada situación.
+- En caso de error, mostrará "Error" seguido de un salto de línea en la salida de errores. Los errores pueden incluir, por ejemplo, argumentos que no son números enteros, argumentos que son mayores que un número entero, duplicados, instrucciones que no existen o que no tienen el formato correcto.
 
-### **Cómo Funciona**
-
-El programa push_swap toma como entrada un conjunto de números enteros que deben ser ordenados. El desafío es encontrar una secuencia de instrucciones utilizando el lenguaje Push swap que ordene los números en el orden correcto. El objetivo es hacerlo de la manera más eficiente posible, utilizando el menor número de instrucciones y acciones.
-
-### **Cómo Contribuir**
+## **Cómo Contribuir**
 
 Si deseas contribuir a este proyecto, puedes seguir los siguientes pasos:
 
@@ -30,7 +26,7 @@ Si deseas contribuir a este proyecto, puedes seguir los siguientes pasos:
 
 **Enviar Pull Request:** Después de realizar los cambios, envía un Pull Request al repositorio original. Tu contribución será revisada y, si es aprobada, se fusionará con el proyecto principal.
 
-### **Ejecución**
+## **Ejecución**
 
 Para ejecutar el programa **push_swap**, sigue los siguientes pasos:
 
@@ -38,12 +34,26 @@ Compila el programa.
 
 	make
 
-Ejecuta el programa con la lista de números enteros que deseas ordenar. Ejemplo:
+Ejecuta el programa checker con la lista de números enteros como argumentos y proporciona las instrucciones a través de la entrada estándar. Ejemplo:
 
 	./push_swap 5 2 8 4 1
+	sa
+	pb
+	ra
+	rra
 
-El programa mostrará en la salida estándar la secuencia de instrucciones necesarias para ordenar los números proporcionados.
+Y para ejecutar el **checker:**
 
-### **Conclusión**
+	./checker 5 2 8 4 1
+	sa
+	pb
+	ra
+	rra
+	...
+	(ctrl+D para finalizar la entrada)
+
+Checker mostrará "OK" si la secuencia de instrucciones ordena correctamente los números y "KO" en caso contrario.
+
+## **Conclusión**
 
 Push_swap es un proyecto desafiante que te ayudará a comprender los algoritmos de ordenamiento y su complejidad. A través de la implementación de este programa, mejorarás tus habilidades de programación en C y aprenderás a encontrar soluciones eficientes para problemas de ordenación de datos. ¡Disfruta del desafío y sigue explorando el mundo de la algoritmia!
