@@ -27,18 +27,19 @@ Compila el programa.
 Ejecuta el programa checker con la lista de números enteros como argumentos y proporciona las instrucciones a través de la entrada estándar. Ejemplo:
 
 	./push_swap 5 2 8 4 1
-	sa
+	pb
 	pb
 	ra
-	rra
+	sa
+ 	...
 
 Y para ejecutar el **checker:**
 
 	./checker 5 2 8 4 1
-	sa
+	pb
 	pb
 	ra
-	rra
+	sa
 	...
 	(ctrl+D para finalizar la entrada)
 
