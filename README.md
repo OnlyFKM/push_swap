@@ -16,16 +16,6 @@ Este proyecto tiene como objetivo la implementación de dos programas en C: **pu
 
 - En caso de error, mostrará "Error" seguido de un salto de línea en la salida de errores. Los errores pueden incluir, por ejemplo, argumentos que no son números enteros, argumentos que son mayores que un número entero, duplicados, instrucciones que no existen o que no tienen el formato correcto.
 
-## **Cómo Contribuir**
-
-Si deseas contribuir a este proyecto, puedes seguir los siguientes pasos:
-
-**Clonar el Repositorio:** Clona el repositorio de GitHub en tu máquina local.
-
-**Realizar Cambios:** Implementa mejoras, correcciones de errores o nuevas características en el código del proyecto.
-
-**Enviar Pull Request:** Después de realizar los cambios, envía un Pull Request al repositorio original. Tu contribución será revisada y, si es aprobada, se fusionará con el proyecto principal.
-
 ## **Ejecución**
 
 Para ejecutar el programa **push_swap**, sigue los siguientes pasos:
