@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 17:54:38 by frcastil          #+#    #+#             */
-/*   Updated: 2023/05/03 12:25:52 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:45:45 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			if (needle[j] == '\0')
 				return ((char *)&haystack[i]);
 		}
-			i++;
+		i++;
 	}
 	return (NULL);
 }

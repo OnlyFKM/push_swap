@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 12:23:49 by frcastil          #+#    #+#             */
-/*   Updated: 2023/04/25 15:32:23 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:45:15 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	if (dst_len < size)
 		dst[dst_len + src_len] = '\0';
 	while (src[src_len] != '\0')
-	src_len++;
+		src_len++;
 	return (dst_len + src_len);
 }
 

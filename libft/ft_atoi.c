@@ -6,13 +6,13 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:19:56 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/11 12:25:02 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:21:07 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
 	long long	sign;
 	long long	res;

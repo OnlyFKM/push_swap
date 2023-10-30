@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 12:07:45 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/25 12:15:17 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:43:26 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,7 @@ char	**ft_check_args(int argc, char *argv[])
 	char	**str;
 
 	if (argc < 2)
-	{
-		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
-	}
 	else if (argc == 2)
 	{
 		str = ft_split(argv[1], ' ');

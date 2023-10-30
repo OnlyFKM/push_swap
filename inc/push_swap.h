@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 11:06:12 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/25 12:12:47 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:24:36 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,6 @@ void		ft_checker(t_stack **stack_a, t_stack **stack_b);
 // utils_bonus.c
 void		ft_final_check(t_stack **stack_a, t_stack **stack_b);
 void		ft_free_stack(t_stack **stack);
+void		ft_leaks(void);
 
 #endif

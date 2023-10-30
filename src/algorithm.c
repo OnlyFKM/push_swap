@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 10:26:23 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/24 18:25:23 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:03:49 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_rotate_a_if(t_stack **stack_a, int *cost_a)
 		{
 			ft_reverse_rotate_a(stack_a, 1);
 			(*cost_a)++;
-		}		
+		}
 	}
 }
 

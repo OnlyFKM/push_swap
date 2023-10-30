@@ -6,7 +6,7 @@
 /*   By: frcastil <frcastil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 10:41:50 by frcastil          #+#    #+#             */
-/*   Updated: 2023/10/25 12:12:25 by frcastil         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:44:18 by frcastil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,7 @@ char	**ft_check_args(int argc, char *argv[])
 	char	**str;
 
 	if (argc < 2)
-	{
-		ft_printf("Error\n");
 		exit(EXIT_FAILURE);
-	}
 	else if (argc == 2)
 	{
 		str = ft_split(argv[1], ' ');
@@ -118,9 +115,10 @@ int	main(int argc, char *argv[])
 		}
 		i++;
 	}
-	ft_free_str(str);
 	ft_checker(stack_a, stack_b);
 	ft_final_check(stack_a, stack_b);
+	if (argc == 2)
+		ft_free_str(str);
 	ft_free_stack(stack_a);
 	ft_free_stack(stack_b);
 	return (0);
